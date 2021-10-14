@@ -1,13 +1,12 @@
-# macime
+# Informacion del proyecto 
 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-green.svg)](https://opensource.org/licenses/) [![GitHub issues](https://img.shields.io/github/issues/soyjorgeprg/macime)](https://github.com/soyjorgeprg/macime/issues) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-green.svg)](https://opensource.org/licenses/) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
 ## Tabla de contenidos
 
 
 * [Descripcion del problema](#descripcion-del-problema)
 * [Descripcion del proyecto](#descripcion-del-proyecto)
-* [Documentacion Adicional](#documentacion-adicional)
 
 ### Descripcion del problema
 
@@ -38,11 +37,3 @@ Para esto será necesario que cada uno de los usuarios añada a su perfil el con
 
 Además las estaciones de servicio podrán beneficiarse de este aplicativo ya que sabrán desde que puntos de la geografía española más usuarios lanzan consultas sobre cada carburante y así saber donde deben situar su próxima gasolineraconsultas sobre cada carburante y así saber donde deben situar su próxima gasolinera.
 
-### Documentacion Adicional
-
-En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
-* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/primerosPasos.md)
-
-
-
-[//]: https://geoportalgasolineras.es/#/Descargas
