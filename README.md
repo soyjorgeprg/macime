@@ -39,8 +39,8 @@ Aquí se realizará un primer diseño del aplicativo, y para poder realizar esta
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/primerosPasos.md)
-* [Descripcion del problema](https://github.com/soyjorgeprg/macime/blob/hito1/documentacionAdicional/infoProyectos.md#descripcion-del-problema)
-* [Descripcion del proyecto](https://github.com/soyjorgeprg/macime/blob/hito1/documentacionAdicional/infoProyectos.md#descripcion-del-proyecto)
+* [Descripcion del problema](https://github.com/soyjorgeprg/macime/blob/hito1/documentacionAdicional/infoProyecto.md#descripcion-del-problema)
+* [Descripcion del proyecto](https://github.com/soyjorgeprg/macime/blob/hito1/documentacionAdicional/infoProyecto.md#descripcion-del-proyecto)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
