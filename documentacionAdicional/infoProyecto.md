@@ -31,9 +31,7 @@ Por tanto, realizar grandes viajes con este tipo de automoviles sigue siendo un 
 
 ### Descripcion del proyecto
 
-Este proyecto nace para solventar este problema. Basaremos nuestro aplicativo en encontrar la ruta por la que ir entre dos puntos pasando por las gasolineras o puntos de recarga donde más barato nos vaya a resultar el viaje. Los usuarios también podrán saber donde se encuentra su gasolinera más cercana compatible con su vehiculo.
-
-Para esto será necesario que cada uno de los usuarios añada a su perfil el consumo medio de su vehiculo, el tamaño de su deposito y el combustible restante. Con esta información y su locación podremos resolver sus problemas.
+Este proyecto nace para solventar este problema. Basaremos nuestro aplicativo en encontrar, primero de todo, la gasolinera más cercana a nuestra localización que más nos interese, pudiendo continuar por la ruta por la que ir entre dos puntos pasando por las gasolineras o puntos de recarga donde más barato nos vaya a resultar el viaje.
 
 Además las estaciones de servicio podrán beneficiarse de este aplicativo ya que sabrán desde que puntos de la geografía española más usuarios lanzan consultas sobre cada carburante y así saber donde deben situar su próxima gasolineraconsultas sobre cada carburante y así saber donde deben situar su próxima gasolinera.
 

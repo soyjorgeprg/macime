@@ -12,28 +12,36 @@
 
 Hemos planificado los próximos 5 hitos que entendemos se desarrollarán a lo largo de este proyecto. A algunos de ellos se han añadido diversos _issues_ para detallar el desarrollo del aplicativo.
 
-[HITO 1](https://github.com/soyjorgeprg/macime/milestone/1): Generación de la planificación del proyecto
+[HITO 0](https://github.com/soyjorgeprg/macime/milestone/1) _INTERNAL_: Generación de la planificación del proyecto
 
-Este es el paso donde nos encontramos actualmente, aquí hemos descrito dos _issues_ diferentes para poder seguir el desarrollo de este paso. 
+Estos son los primeros pasos que deben darse en cualquier proyecto de manera interna, es decir, debe planificarse para posteriormente poder acertar en la ejecución. 
 
   + [#5](https://github.com/soyjorgeprg/macime/issues/5): Generación de las historias de usuario para el desarrollo del aplicativo
-  + [#8](https://github.com/soyjorgeprg/macime/issues/8): Descripción de las primeras clases minimas
 
-[HITO 2](https://github.com/soyjorgeprg/macime/milestone/2): Diseño especificaciones del aplicativo
+[HITO 1](https://github.com/soyjorgeprg/macime/milestone/6): Conocer la mejor gasolinera en relación precio/distancia. 
 
-Aquí se realizará un primer diseño del aplicativo, y para poder realizar esta acción hemos seleccionado una serie de Historias de Usuario.
+Aquí se realizará la primera implementación del aplicativo, y para poder realizar esta acción hemos seleccionado una serie de Historias de Usuario.
 
-  + [HU01](https://github.com/soyjorgeprg/macime/issues/2): Calcular la ruta entre dos puntos
-  + [HU02](https://github.com/soyjorgeprg/macime/issues/3): Introducción de la información necesaria para el calculo de las rutas
-  + [HU03](https://github.com/soyjorgeprg/macime/issues/4): Modificar datos sobre un coche
-  + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Creación de un perfil de usuario
-  + [HU05](https://github.com/soyjorgeprg/macime/issues/7): Estudiar donde debe estar situada una nueva estación de servicio
+  + [HU03](https://github.com/soyjorgeprg/macime/issues/4): Saber donde se encuentra la gasolinera más cercana respecto a la relación precio/distancia. 
+  + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Saber un listado de todos los descuentos de las gasolineras.
 
-[HITO 3](https://github.com/soyjorgeprg/macime/milestone/5): Generacion de los casos de prueba para el primer PMV
+[HITO 2](https://github.com/soyjorgeprg/macime/milestone/5): Algoritmo de recorrido de las carreteras.
 
-[HITO 4](https://github.com/soyjorgeprg/macime/milestone/3): Implementación del aplicativo
+Implementación de las clases y funciones necesarias para ofrecer la ruta eficiente entre dos puntos.
 
-[HITO 5](https://github.com/soyjorgeprg/macime/milestone/4): Despligue del aplicativo en la nube
+  + [HU01](https://github.com/soyjorgeprg/macime/issues/9): Calculo de las rutas entre dos puntos.
+
+[HITO 3](https://github.com/soyjorgeprg/macime/milestone/3): Posibilidad de modificación de los usuarios.
+
+En este punto será posible cambiar ciertos aspectos del usuario que afecten al resultado del algoritmo
+
+  + [HU02](https://github.com/soyjorgeprg/macime/issues/3): Gestionar el coche.
+
+[HITO 4](https://github.com/soyjorgeprg/macime/milestone/4): Información sobre las busquedas.
+
+Se podrá obtener información sobre las búsquedas de los usuarios.
+
+  + [HU05](https://github.com/soyjorgeprg/macime/issues/7): Estudiar donde debe estar situada una nueva estación de servicio.
 
 ### Documentacion Adicional
 
