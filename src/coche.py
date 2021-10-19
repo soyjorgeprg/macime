@@ -1,10 +1,11 @@
 class Coche:
 
-    def __init__(self, marca, modelo, consumo, deposito, actual)
+    def __init__(self, consumo, deposito, actual)
         pass
 
-    def modConsumo(self, consumo)
+    def getConsumo(self)
         pass
 
-    def modActual(self, actual)
+    def getDeposito(deposito)
         pass
+
