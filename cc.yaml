@@ -1,3 +1,4 @@
 entidad: 
   - src/coche.py
-  - src/usuario.py
+  - src/gasolinera.py
+  - src/localizacion.py
