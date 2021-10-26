@@ -1,11 +1,13 @@
 class Coche:
 
-    def __init__(self, consumo, deposito, actual)
-        pass
+    def __init__(self, consumo, deposito, actual):
+        self.consumo = consumo
+        self.deposito = deposito
+        self.actual = actual
 
-    def getConsumo(self)
-        pass
+    def getConsumo(self):
+        return self.consumo
 
-    def getDeposito(deposito)
-        pass
+    def getDeposito(self):
+        return self.deposito
 

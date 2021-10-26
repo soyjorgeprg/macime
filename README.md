@@ -50,14 +50,14 @@ Estos son los primeros pasos que deben darse en cualquier proyecto de manera int
 
 Aquí se realizará la primera implementación del aplicativo, y para poder realizar esta acción hemos seleccionado una serie de Historias de Usuario.
 
-  + [HU03](https://github.com/soyjorgeprg/macime/issues/4): Saber donde se encuentra la gasolinera más cercana respecto a la relación precio/distancia. 
-  + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Saber un listado de todos los descuentos de las gasolineras.
+  + [HU01](https://github.com/soyjorgeprg/macime/issues/4): Saber donde se encuentra la gasolinera más cercana respecto a la relación precio/distancia. 
+  + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Conocer los descuentos de la gasolinera.
 
 [HITO 2](https://github.com/soyjorgeprg/macime/milestone/5): Algoritmo de recorrido de las carreteras.
 
 Implementación de las clases y funciones necesarias para ofrecer la ruta eficiente entre dos puntos.
 
-  + [HU01](https://github.com/soyjorgeprg/macime/issues/9): Calculo de las rutas entre dos puntos.
+  + [HU03](https://github.com/soyjorgeprg/macime/issues/9): Calculo de las rutas entre dos puntos.
 
 [HITO 3](https://github.com/soyjorgeprg/macime/milestone/3): Posibilidad de modificación de los usuarios.
 
