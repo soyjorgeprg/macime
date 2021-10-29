@@ -46,30 +46,24 @@ Estos son los primeros pasos que deben darse en cualquier proyecto de manera int
 
   + [#5](https://github.com/soyjorgeprg/macime/issues/5): Generación de las historias de usuario para el desarrollo del aplicativo
 
-[HITO 1](https://github.com/soyjorgeprg/macime/milestone/6): Conocer la mejor gasolinera en relación precio/distancia. 
+[HITO 1](https://github.com/soyjorgeprg/macime/milestone/6): Mejor gasolinera en relación precio/distancia 
 
 Aquí se realizará la primera implementación del aplicativo, y para poder realizar esta acción hemos seleccionado una serie de Historias de Usuario.
 
   + [HU01](https://github.com/soyjorgeprg/macime/issues/4): Saber donde se encuentra la gasolinera más cercana respecto a la relación precio/distancia. 
   + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Conocer los descuentos de la gasolinera.
 
-[HITO 2](https://github.com/soyjorgeprg/macime/milestone/5): Algoritmo de recorrido de las carreteras.
+[HITO 2](https://github.com/soyjorgeprg/macime/milestone/5): Optimización del recorrido.
 
 Implementación de las clases y funciones necesarias para ofrecer la ruta eficiente entre dos puntos.
 
   + [HU03](https://github.com/soyjorgeprg/macime/issues/9): Calculo de las rutas entre dos puntos.
 
-[HITO 3](https://github.com/soyjorgeprg/macime/milestone/3): Posibilidad de modificación de los usuarios.
-
-En este punto será posible cambiar ciertos aspectos del usuario que afecten al resultado del algoritmo
-
-  + [HU02](https://github.com/soyjorgeprg/macime/issues/3): Gestionar el coche.
-
-[HITO 4](https://github.com/soyjorgeprg/macime/milestone/4): Información sobre las busquedas.
+[HITO 3](https://github.com/soyjorgeprg/macime/milestone/4): Información sobre las busquedas.
 
 Se podrá obtener información sobre las búsquedas de los usuarios.
 
-  + [HU05](https://github.com/soyjorgeprg/macime/issues/7): Estudiar donde debe estar situada una nueva estación de servicio.
+  + [HU02](https://github.com/soyjorgeprg/macime/issues/7): Estudiar donde debe estar situada una nueva estación de servicio.
 
 ### Documentacion Adicional
 
