@@ -17,11 +17,39 @@ def obtenerGasolineras(code):
 
     return gasolineras
 
+def distanciaMinima(direccion, gasolineras):
+    origin = direccion.replace(" ", "+")
+
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + origin +"&key=AIzaSyCiRfNspRJacWKMkE3osrjxsLYZnDcy1YQ"
+    response = requests.get(url).json()
+    lat_ori = response['results'][0]['geometry']['location'].get('lat')
+    lng_ori = response['results'][0]['geometry']['location'].get('lng')
+
+    distancias = []
+    for es in gasolineras:
+        lat, lng = es.getLocalizacion().getLocalizacionPrecisa()
+
+        lat_dest = str(lat).replace(',', '.')
+        lng_dest = str(lng).replace(',', '.')
+
+        url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + str(lat_ori) + "," + str(lng_ori)  + "&destination=" + lat_dest + "," + lng_dest + "&key=AIzaSyCiRfNspRJacWKMkE3osrjxsLYZnDcy1YQ"
+        response = requests.get(url).json()
+        #print(response['routes'][0]['legs'][0]['distance'].get("value"))
+        dist = response['routes'][0]['legs'][0]['distance'].get("value")
+        distancias.append(dist)
+
+    min_value = min(distancias)
+    min_index = distancias.index(min_value)
+
+    return min_index
+    
 
 def main():
     glp = obtenerGasolineras('17')
-    print(glp[0].getPrecio())
+    #print(glp[0].getPrecio())
     # gnc = obtenerGasolineras('18')
+    x = distanciaMinima("Calle Forja 22 28850 Torrejon de Ardoz", glp)
+    print(glp[x])
 
 if __name__ == "__main__":
     main()
