@@ -12,3 +12,6 @@ class Gasolinera:
     def getLocalizacion(self):
         return self.localizacion
 
+    def __str__(self):
+        return "La gasolinera " + self.empresa + " con precio " + str(self.precio) + " localizada en " + str(self.localizacion)
+
