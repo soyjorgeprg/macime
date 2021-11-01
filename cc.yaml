@@ -2,3 +2,9 @@ entidad:
   - src/coche.py
   - src/gasolinera.py
   - src/localizacion.py
+lenguaje:
+  - python
+test:
+  - src/test/test.py
+fichero_tareas:
+  - dodo.py
