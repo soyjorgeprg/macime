@@ -3,6 +3,15 @@ from gasolinera import Gasolinera
 from coche import Coche
 
 import requests
+import json
+
+def obtenerGMapsApiKey():
+    secrets_filename = 'key.json'
+    api_keys = {}
+    with open(secrets_filename, 'r') as f:
+        api_keys = json.loads(f.read())
+
+    return api_keys['MAPS_API_KEY']
 
 def obtenerGasolineras(code):
     url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProducto/" + code
@@ -28,11 +37,12 @@ def distanciaMinima(direccion, gasolineras):
     distancias = []
     for es in gasolineras:
         lat, lng = es.getLocalizacion().getLocalizacionPrecisa()
+        api_key = obtenerGMapsApiKey()
 
         lat_dest = str(lat).replace(',', '.')
         lng_dest = str(lng).replace(',', '.')
 
-        url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + str(lat_ori) + "," + str(lng_ori)  + "&destination=" + lat_dest + "," + lng_dest + "&key=AIzaSyCiRfNspRJacWKMkE3osrjxsLYZnDcy1YQ"
+        url = "https://maps.googleapis.com/maps/api/directions/json?origin=" + str(lat_ori) + "," + str(lng_ori)  + "&destination=" + lat_dest + "," + lng_dest + "&key=" + api_key
         response = requests.get(url).json()
         #print(response['routes'][0]['legs'][0]['distance'].get("value"))
         dist = response['routes'][0]['legs'][0]['distance'].get("value")
