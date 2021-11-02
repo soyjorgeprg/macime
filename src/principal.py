@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 from localizacion import Localizacion
 from gasolinera import Gasolinera
 from coche import Coche
@@ -29,7 +32,7 @@ def obtenerGasolineras(code):
 def distanciaMinima(direccion, gasolineras):
     origin = direccion.replace(" ", "+")
 
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + origin +"&key=AIzaSyCiRfNspRJacWKMkE3osrjxsLYZnDcy1YQ"
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + origin +"&key=" + api_key
     response = requests.get(url).json()
     lat_ori = response['results'][0]['geometry']['location'].get('lat')
     lng_ori = response['results'][0]['geometry']['location'].get('lng')
