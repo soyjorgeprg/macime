@@ -94,7 +94,7 @@ Se podrá obtener información sobre las búsquedas de los usuarios.
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/primerosPasos.md)
-* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/gestionTests.md)
+* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/hito2/documentacionAdicional/gestionTests.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
