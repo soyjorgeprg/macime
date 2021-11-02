@@ -3,6 +3,7 @@ sys.path.insert(1, 'src')
 
 from gasolinera import Gasolinera
 from localizacion import Localizacion
+#from principal import distanciaMinima 
 
 
 import unittest
@@ -30,6 +31,11 @@ class Pruebas(unittest.TestCase):
         # Testing it returns a tuple of floats
         self.assertEqual(type(self.l.getLocalizacionPrecisa()), type((float, float)))
         
+
+    #def test_distancia(self):
+    #    x = distanciaMinima("Calle Forja 22 28850 Torrejon de Ardoz", self.gasolineras)
+
+    #    self.assertEqual(x, 0)
 
     
     def tearDown(self):
