@@ -36,6 +36,31 @@ Este proyecto nace para solventar este problema. Basaremos nuestro aplicativo en
 
 Además las estaciones de servicio podrán beneficiarse de este aplicativo ya que sabrán desde que puntos de la geografía española más usuarios lanzan consultas sobre cada carburante y así saber donde deben situar su próxima gasolineraconsultas sobre cada carburante y así saber donde deben situar su próxima gasolinera.
 
+### Gestion de los test
+
+Para la correcta ejecución de los test será necesario hacer uso del gestor de tareas _doit_. A continuación detallaremos como realizarlos:
+
+```
+
+[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/macime]
+doit list
+pruebas   Lanzamiento de los test unitarios del sistema
+
+[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/macime]
+$ doit pruebas
+.  pruebas
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.18, pytest-4.6.9, py-1.8.1, pluggy-0.13.0
+rootdir: /mnt/c/Users/jorge/Documents/Universidad/UGR/1erSemestre/CC/proyecto/macime
+collected 2 items
+
+src/tests/tests.py ..                                                    [100%]
+
+=========================== 2 passed in 0.11 seconds ===========================
+
+```
+
+
 ### Descripcion de los hitos
 
 Hemos planificado los próximos 5 hitos que entendemos se desarrollarán a lo largo de este proyecto. A algunos de ellos se han añadido diversos _issues_ para detallar el desarrollo del aplicativo.
@@ -75,6 +100,7 @@ Se podrá obtener información sobre las búsquedas de los usuarios.
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/primerosPasos.md)
+* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/gestionTests.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
