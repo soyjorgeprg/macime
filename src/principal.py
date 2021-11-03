@@ -1,6 +1,3 @@
-#!/usr/bin/python
-# -*- coding: UTF-8 -*-
-
 from localizacion import Localizacion
 from gasolinera import Gasolinera
 from coche import Coche
@@ -9,7 +6,7 @@ import requests
 import json
 
 def obtenerGMapsApiKey():
-    secrets_filename = 'key.json'
+    secrets_filename = 'src/key.json'
     api_keys = {}
     with open(secrets_filename, 'r') as f:
         api_keys = json.loads(f.read())
@@ -31,6 +28,7 @@ def obtenerGasolineras(code):
 
 def distanciaMinima(direccion, gasolineras):
     origin = direccion.replace(" ", "+")
+    api_key = obtenerGMapsApiKey()
 
     url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + origin +"&key=" + api_key
     response = requests.get(url).json()
