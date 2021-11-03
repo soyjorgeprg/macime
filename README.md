@@ -6,7 +6,6 @@
 
 * [Descripcion del problema](#descripcion-del-problema)
 * [Descripcion del proyecto](#descripcion-del-proyecto)
-* [Descripcion de los hitos](#descripcion_de_los_hitos)
 * [Documentacion Adicional](#documentacion-adicional)
 
 ### Descripcion del problema
@@ -59,36 +58,6 @@ src/tests/tests.py ..                                                    [100%]
 =========================== 2 passed in 0.11 seconds ===========================
 
 ```
-
-
-### Descripcion de los hitos
-
-Hemos planificado los próximos 5 hitos que entendemos se desarrollarán a lo largo de este proyecto. A algunos de ellos se han añadido diversos _issues_ para detallar el desarrollo del aplicativo.
-
-[HITO 0](https://github.com/soyjorgeprg/macime/milestone/1) _INTERNAL_: Generación de la planificación del proyecto
-
-Estos son los primeros pasos que deben darse en cualquier proyecto de manera interna, es decir, debe planificarse para posteriormente poder acertar en la ejecución. 
-
-  + [#5](https://github.com/soyjorgeprg/macime/issues/5): Generación de las historias de usuario para el desarrollo del aplicativo
-
-[HITO 1](https://github.com/soyjorgeprg/macime/milestone/6): Mejor gasolinera en relación precio/distancia 
-
-Aquí se realizará la primera implementación del aplicativo, y para poder realizar esta acción hemos seleccionado una serie de Historias de Usuario.
-
-  + [HU01](https://github.com/soyjorgeprg/macime/issues/4): Saber donde se encuentra la gasolinera más cercana respecto a la relación precio/distancia. 
-  + [HU04](https://github.com/soyjorgeprg/macime/issues/6): Conocer los descuentos de la gasolinera.
-
-[HITO 2](https://github.com/soyjorgeprg/macime/milestone/5): Optimización del recorrido.
-
-Implementación de las clases y funciones necesarias para ofrecer la ruta eficiente entre dos puntos.
-
-  + [HU03](https://github.com/soyjorgeprg/macime/issues/9): Calculo de las rutas entre dos puntos.
-
-[HITO 3](https://github.com/soyjorgeprg/macime/milestone/4): Información sobre las busquedas.
-
-Se podrá obtener información sobre las búsquedas de los usuarios.
-
-  + [HU02](https://github.com/soyjorgeprg/macime/issues/7): Estudiar donde debe estar situada una nueva estación de servicio.
 
 ### Documentacion Adicional
 
