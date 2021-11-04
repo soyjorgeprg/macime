@@ -13,4 +13,3 @@ class Coche:
 
     def __str__(self):
         return "El coche tiene un consumo de " + self.consumo + " con un deposito de " + self.deposito 
-
