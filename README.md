@@ -62,8 +62,8 @@ src/tests/tests.py ..                                                    [100%]
 ### Documentacion Adicional
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
-* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/hito0/documentacionAdicional/primerosPasos.md)
-* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/hito2/documentacionAdicional/gestionTests.md)
+* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/main/documentacionAdicional/primerosPasos.md)
+* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/main/documentacionAdicional/gestionTests.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
