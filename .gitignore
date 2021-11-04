@@ -131,3 +131,4 @@ dmypy.json
 # Files add personally
 src/key.json
 .doit.db
+.idea/
