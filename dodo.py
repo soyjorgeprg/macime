@@ -4,7 +4,7 @@ def task_pruebas():
     """Lanzamiento de los test unitarios del sistema"""
 
     def pruebas():
-        return "pytest src/tests/tests.py"
+        return "pytest -rfEs -vv src/tests/tests.py"
 
     return {
             'actions': [CmdAction(pruebas)],
