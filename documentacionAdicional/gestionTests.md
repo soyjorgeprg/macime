@@ -17,9 +17,11 @@ También se barajó la posibilidad de [dramatiq](https://github.com/Bogdanp/dram
 
 ### Biblioteca de aserciones
 
+Se ha decidido que los test serán de tipo TDD ya que será más sencillo generar los test para este proyecto. Aunque la diferencia entre ambas no es grande (más el enfoque, TDD los test definen como debe funcionar el código y BDD se definen los test por el comportamiento esperado) me siento más cómodo con los test TDD.
+
 [unittest](https://docs.python.org/3/library/unittest.html) ha sido escogida como librería de test unitarios debido a que es de gran confianza al tratarse de una de las principales librerías y tener una gran cantidad de funciones para diferentes aserciones. Un punto a favor fue también la buena documentación que encontré de la librería, con ejemplos y detallada.
 
-Se consideraron otras opciones como [grappa](https://github.com/grappa-py/grappa) pero el hecho de tener tan pocas estrellas, la documentación más sencilla a la hora de funciones y clases propias y que llevasen un año sin realizar un commit fue lo que me hizo descartarla.
+Se consideraron otras opciones como [grappa](https://github.com/grappa-py/grappa) pero es BDD además el hecho de tener tan pocas estrellas, la documentación más sencilla a la hora de funciones y clases propias y que llevasen un año sin realizar un commit fue lo que me hizo descartarla.
 
 ### Marco de pruebas
 
