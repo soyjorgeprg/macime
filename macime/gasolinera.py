@@ -43,11 +43,11 @@ class Gasolinera:
 
         path = ""
         if code == "17":
-            path = "src/data/glp.json"
+            path = "macime/data/glp.json"
         elif code == "18":
-            path = "src/data/gnc.json"
+            path = "macime/data/gnc.json"
         else:
-            path = "src/data/eess.json"
+            path = "macime/data/eess.json"
 
         with open(path, 'w') as eess:
             json.dump(respuesta, eess)
@@ -55,7 +55,7 @@ class Gasolinera:
         return 0
 
     def leerGasolineras(self, tipo):
-        fichero = "src/data/" + tipo.lower() + '.json'
+        fichero = "macime/data/" + tipo.lower() + '.json'
 
         with open(fichero, 'r') as f:
             respuesta = json.load(f)

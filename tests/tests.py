@@ -3,7 +3,7 @@ import unittest
 import random
 import pathlib
 
-sys.path.insert(1, 'src')
+sys.path.insert(2, 'macime')
 
 from gasolinera import Gasolinera
 from localizacion import Localizacion
@@ -45,7 +45,7 @@ class Pruebas(unittest.TestCase):
         '''
             Checking if it get the json
         '''
-        path = "src/data/glp.json"
+        path = "macime/data/glp.json"
         if not pathlib.Path(path).resolve().is_file():
             raise AssertionError("No existe el fichero: %s" % path)
         else:
