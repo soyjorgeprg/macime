@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # Files add personally
-macime/key.json
+macime/claves.json
 .doit.db
 .idea/

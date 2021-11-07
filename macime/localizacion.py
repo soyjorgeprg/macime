@@ -25,7 +25,7 @@ class Localizacion:
         return self.direccion + " " + self.cp + " " + self.localidad + " " + self.provincia
 
     def obtenerGMapsApiKey(self):
-        secrets_filename = 'macime/key.json'
+        secrets_filename = 'macime/claves.json'
         with open(secrets_filename, 'r') as f:
             api_keys = json.loads(f.read())
 
