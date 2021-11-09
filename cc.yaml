@@ -1,10 +1,10 @@
 entidad: 
-  - src/coche.py
-  - src/gasolinera.py
-  - src/localizacion.py
+  - macime/coche.py
+  - macime/gasolinera.py
+  - macime/localizacion.py
 lenguaje:
   - python
 test:
-  - src/test/test.py
+  - tests/tests.py
 fichero_tareas:
   - dodo.py
