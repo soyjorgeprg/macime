@@ -6,38 +6,24 @@ from localizacion import Localizacion
 
 class Gasolinera:
 
-    def __init__(self, empresa="", precio=0, localizacion="", horario=""):
+    def __init__(self, localizacion, empresa="", precio=0, horario=""):
         self.empresa = empresa
-        self.precio = precio
-        self.localizacion = localizacion
+        self._precio = precio
+        self._localizacion = localizacion
         self.horario = horario
 
-    def getPrecio(self):
-        return self.precio
+    @property
+    def precio(self):
+        return self._precio
 
-    def getLocalizacion(self):
-        return self.localizacion
+    @property
+    def localizacion(self):
+        return self._localizacion
 
     def __str__(self):
-        return "La gasolinera " + self.empresa + " con precio " + str(self.precio) + " localizada en " + str(self.localizacion)
+        return "La gasolinera " + self.empresa + " con precio " + str(self._precio) + " localizada en " + str(self._localizacion)
 
     def obtenerGasolineras(self, code):
-        '''
-            Los codigos que pueden enviarles son muy variados aunque los que nos interesan a nosotros son el 17 (GLP) y el 18 (GNC).
-        '''
-        url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProducto/" + code
-        
-        respuesta = requests.get(url).json()
-
-        gasolineras = []
-
-        for x in respuesta['ListaEESSPrecio']:
-            localizacion = Localizacion(x['Dirección'], x['C.P.'], x['Localidad'], x['Provincia'], x['Latitud'], x['Longitud (WGS84)'])
-            gasolineras.append(Gasolinera(x['Rótulo'], x['PrecioProducto'], localizacion, x['Horario']))
-
-        return gasolineras
-
-    def guardarGasolineras(self, code):
         url = "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProducto/" + code
         respuesta = requests.get(url).json()
 
@@ -63,6 +49,6 @@ class Gasolinera:
         gasolineras = []
         for x in respuesta['ListaEESSPrecio']:
             localizacion = Localizacion(x['Dirección'], x['C.P.'], x['Localidad'], x['Provincia'], x['Latitud'], x['Longitud (WGS84)'])
-            gasolineras.append(Gasolinera(x['Rótulo'], x['PrecioProducto'], localizacion, x['Horario']))
+            gasolineras.append(Gasolinera(localizacion, x['Rótulo'], x['PrecioProducto'], x['Horario']))
 
         return gasolineras
