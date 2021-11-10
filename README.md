@@ -49,21 +49,24 @@ pruebas   Lanzamiento de los test unitarios del sistema
 $ doit pruebas
 .  pruebas
 ============================= test session starts ==============================
-platform linux2 -- Python 2.7.18, pytest-4.6.9, py-1.8.1, pluggy-0.13.0
-rootdir: /mnt/c/Users/jorge/Documents/Universidad/UGR/1erSemestre/CC/proyecto/macime
-collected 2 items
+platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: <path>, configfile: pytest.ini, testpaths: tests
+collecting ... collected 4 items
 
-src/tests/tests.py ..                                                    [100%]
+tests/tests.py::Pruebas::test_cargas PASSED                              [ 25%]
+tests/tests.py::Pruebas::test_distancia PASSED                           [ 50%]
+tests/tests.py::Pruebas::test_gestiongasolineras PASSED                  [ 75%]
+tests/tests.py::Pruebas::test_localizacion PASSED                        [100%]
 
-=========================== 2 passed in 0.11 seconds ===========================
-
+============================== 4 passed in 2.18s ===============================
 ```
 
 ### Documentacion Adicional
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
-* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/main/documentacionAdicional/primerosPasos.md)
-* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/main/documentacionAdicional/gestionTests.md)
+* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/main/docs/primerosPasos.md)
+* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/main/docs/gestionTests.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
