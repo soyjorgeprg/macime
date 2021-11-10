@@ -15,9 +15,9 @@ class Pruebas(unittest.TestCase):
         self.localizacion = []
         self.gasolineras = []
 
-        self.localizacion.append(Localizacion("Calle Forja 22", "28850", "Torrejon de Ardoz", "Madrid", 40.4529061660252, -3.459435975099579))
-        self.localizacion.append(Localizacion("Calle Atenas 13", "28850", "Torrejon de Ardoz", "Madrid"))
-        self.localizacion.append(Localizacion("Calle Espronceda 3", "46520", "Puerto de Sagunto", "Valencia", 39.65821250951125, -0.21494956814433297))
+        self.localizacion.append(Localizacion("Calle Forja 22", "28850", "Torrejon de Ardoz", "Madrid", "40,4529061660252", "-3,459435975099579"))
+        self.localizacion.append(Localizacion("Calle Atenas 13", "28850", "Torrejon de Ardoz", "Madrid", "40,45966642667289", "-3,469308315651375"))
+        self.localizacion.append(Localizacion("Calle Espronceda 3", "46520", "Puerto de Sagunto", "Valencia", "39,65821250951125", "-0,21494956814433297"))
 
         self.gasolineras.append(Gasolinera(self.localizacion[0], "CEPSA", round(random.uniform(0.65, 0.89), 2)))
         self.gasolineras.append(Gasolinera(self.localizacion[2], "BP", round(random.uniform(0.65, 0.89), 2)))
