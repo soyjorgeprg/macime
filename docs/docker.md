@@ -1,5 +1,11 @@
-* [Marco de pruebas](#marco-de-pruebas)
-* [Eleccion final](#eleccion-final)
+* [Explicacion del desarrollo del Dockerfile](#explicacion-del-desarrollo-del-dockerfile)
+  * [Ubuntu](#ubuntu)
+  * [Alpine](#alpine)
+  * [Python](#python)
+  * [Multicapa](#multicapa)
+* [Explicacion de la automatizacion de subida a los registros](#explicacion-de-la-automatizacion-de-subida-a-los-registros)
+  * [DockerHub](#dockerhub)
+  * [Registro alternativo](#registro-alternativo)
 
 ## Explicación del desarrollo del Dockerfile
 
@@ -64,4 +70,55 @@ En este caso ya tenemos un tamaño considerablemente bueno pero se quiso intenta
 
 Se eligió esta etiqueta frente a otras debido a que de esta manera sabríamos que versión de python está instalado y sobre qué version de Alpine. Y sobre la version latest, además de por las razones ya dichas, también porque el peso base es bastante alto (912MB). El resultado final se encuentra en el fichero [Dockerfile](https://github.com/soyjorgeprg/macime/blob/1fb6be67e1c89bc8fc5e48b461a1a4663f68c65e/Dockerfile) de la raíz del proyecto.
 
+En este caso el contenedor pesa 60MB y un total de 8 capas. Aunque haya aumentado 3 capas, en total se ha visto reducido en un 22% el tamaño de la imagen.
+
+
+### MULTICAPA
+
+Se realizó una última prueba en la que se probó a ver si se podía reducir más el tamaño. Se estuvo investigando sobre la creacion de Dockerfile y se descubrieron los Dockerfile _multistage_. Consiste en crear primero una imagen de la que luego se extraerán aquellas 'partes' que sean importantes para la imagen final. No tiene porque ser una única imagen sino que se puede construir desde varias. En nuestro caso se ha construido desde la imagen de python:3.9-alpine3.14 y desde ahí se ha generado la imagen final.
+
+```
+FROM python:3.9-alpine3.14 as builder
+LABEL maintainer="Jorge Prieto <e.jorgeprg@go.ugr.es>" version="0.1" description="Proyecto universitario"
+
+WORKDIR /app
+
+COPY pytest.ini dodo.py /app 
+COPY requirements.txt .
+
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
+
+
+FROM python:3.9-alpine3.14
+
+WORKDIR /app
+
+COPY --from=builder /app/wheels /wheels
+COPY --from=builder /app /app
+COPY --from=builder /app/requirements.txt .
+
+RUN pip install --no-cache /wheels/*
+```
+
+## Explicacion de la automatizacion de subida a los registros
+
+Una vez creado el contenedor vamos a proceder a subirlo a diversos repositorios publicos de contenedores para poder tenerlos accesibles desde cualquier lugar y por cualquier otro desarrollador.
+
+### DockerHub
+
+El primer registro de contenedores al que se va a subir es [DockerHub](https://hub.docker.com/) debido a que es el principal registro de contenedores actualmente. Para hacer esto de manera automatica se ha desarrollado una _GitHub_ _Action_ que se encarga de subir la imagen cada vez que se modifica uno de los ficheros que afectan al contenedor (Dockerfile, requirements.txt, macime/*, tests/*).
+
+Sobre las versiones de cada uno de los trabajos internos me he decantado por aquellas que son más usadas dentro de GitHub o en caso de ver varios con un número de casos de uso simular por aquella versión más reciente.
+
+El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/main.yml)
+
+Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/readme.yml).
+
+### Registro alternativo
+
+Como registro alternativo se ha escogido GitHub Container Registry ya que estamos llevando todo el proyecto dentro del marco de GitHub. Para realizar esto se ha producido un automatismo similar al de DockerHub para subir la imagen cuando se modifiquen los mismos ficheros (Dockerfile, requirements.txt, macime/*, tests/*). 
+
+De igual manera las versiones están escogidas en base a número de usos o en su defecto más reciente.
+
+El fichero que realiza la acción es [gcr.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/gcr.yml).
 

@@ -43,17 +43,16 @@ Para la correcta ejecución de los test será necesario hacer uso del gestor de 
 
 ```
 
-[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/macime]
-doit list
-pruebas   Lanzamiento de los test unitarios del sistema
+[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/]
+git clone git@github.com:soyjorgeprg/macime.git && cd macime
 
 [07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/macime]
-$ doit pruebas
+docker run -t -v `pwd`/macime:/app/macime -v `pwd`/tests:/app/tests soyjorgeprg/macime:latest
 .  pruebas
 ============================= test session starts ==============================
-platform linux -- Python 3.8.10, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- /usr/bin/python3
+platform linux -- Python 3.9.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /usr/local/bin/python
 cachedir: .pytest_cache
-rootdir: <path>, configfile: pytest.ini, testpaths: tests
+rootdir: /app, configfile: pytest.ini, testpaths: tests
 collecting ... collected 4 items
 
 tests/tests.py::Pruebas::test_cargas PASSED                              [ 25%]
@@ -61,7 +60,7 @@ tests/tests.py::Pruebas::test_distancia PASSED                           [ 50%]
 tests/tests.py::Pruebas::test_gestiongasolineras PASSED                  [ 75%]
 tests/tests.py::Pruebas::test_localizacion PASSED                        [100%]
 
-============================== 4 passed in 2.18s ===============================
+============================== 4 passed in 0.21s ===============================
 ```
 
 ### Documentacion Adicional
@@ -69,7 +68,7 @@ tests/tests.py::Pruebas::test_localizacion PASSED                        [100%]
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/primerosPasos.md)
 * [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/gestionTests.md)
-* [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/)
+* [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/5329c030a2349cfebb1cebfbc6c1467df82b8155/docs/docker.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
