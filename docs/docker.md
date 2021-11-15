@@ -70,9 +70,9 @@ El peso de este contenedor es de 76MB y tambien de 5 capas.
 
 En este caso ya tenemos un tamaño considerablemente bueno pero se quiso intentar reducirlo un poco más, en caso de ser posible. Por eso se probó con la imagen de Python. Se revisaron las últimas etiquetas de ese proyecto y se encontró: [python:3.9-alpine3.14](https://hub.docker.com/layers/python/library/python/3.9-alpine3.14/images/sha256-5cbd0b50f0c3a01ac017a70792a8f1f266d18351f8486eb2a067c2cbf85cc636?context=explore)
 
-Se eligió esta etiqueta frente a otras debido a que de esta manera sabríamos que versión de python está instalado y sobre qué version de Alpine. Y sobre la version latest, además de por las razones ya dichas, también porque el peso base es bastante alto (912MB). El resultado final se encuentra en el fichero [Dockerfile](https://github.com/soyjorgeprg/macime/blob/1fb6be67e1c89bc8fc5e48b461a1a4663f68c65e/Dockerfile) de la raíz del proyecto.
+Se eligió esta etiqueta frente a otras debido a que de esta manera sabríamos que versión de python está instalado y sobre qué version de Alpine. Y sobre la version latest, además de por las razones ya dichas, también porque el peso base es bastante alto (912MB). El resultado final se encuentra en el fichero [Dockerfile](https://github.com/soyjorgeprg/macime/blob/main/Dockerfile) de la raíz del proyecto.
 
-En este caso el contenedor pesa 60MB y un total de 8 capas. Aunque haya aumentado 3 capas, en total se ha visto reducido en un 22% el tamaño de la imagen.
+En este caso el contenedor pesa 52MB y un total de 9 capas. Aunque haya aumentado 3 capas, en total se ha visto reducido en un 32% el tamaño de la imagen.
 
 
 ### MULTICAPA
@@ -112,9 +112,9 @@ El primer registro de contenedores al que se va a subir es [DockerHub](https://h
 
 Sobre las versiones de cada uno de los trabajos internos me he decantado por aquellas que son más usadas dentro de GitHub o en caso de ver varios con un número de casos de uso simular por aquella versión más reciente.
 
-El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/main.yml)
+El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/main.yml)
 
-Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/readme.yml).
+Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/readme.yml).
 
 ### Registro alternativo
 
@@ -122,5 +122,5 @@ Como registro alternativo se ha escogido GitHub Container Registry ya que estamo
 
 De igual manera las versiones están escogidas en base a número de usos o en su defecto más reciente.
 
-El fichero que realiza la acción es [gcr.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/gcr.yml).
+El fichero que realiza la acción es [gcr.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/gcr.yml).
 
