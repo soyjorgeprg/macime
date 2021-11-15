@@ -1,0 +1,67 @@
+* [Marco de pruebas](#marco-de-pruebas)
+* [Eleccion final](#eleccion-final)
+
+## Explicación del desarrollo del Dockerfile
+
+El desarrollo de las pruebas se ha automatizado mediante el uso de contenedores. De esta manera generaremos entornos controlados donde poder probar nuestro producto. El contenedor usado ha sido implementado mediante la prueba de diversas imagenes base e instrucciones.
+
+### UBUNTU 
+
+Comenzamos usando una imagen de Ubuntu como base ya que es una de las distribuciones de Linux más extendidas. 
+
+```
+FROM ubuntu:latest
+LABEL maintainer="Jorge Prieto <e.jorgeprg@go.ugr.es>" version="0.1" description="Proyecto universitario"
+RUN apt update && apt install -y \
+    && apt install python3.8 python3-pip -y \
+    && addgroup devs && adduser --ingroup devs --disabled-password dev
+
+USER dev
+ENV PATH="${PATH}:/home/dev/.local/bin"
+WORKDIR /app
+RUN pip3 install doit pytest requests
+
+COPY --chown=dev:devs pytest.ini dodo.py . 
+
+CMD ["doit", "pruebas"]
+
+```
+
+En este caso es necesario primeramente actualizar el sistema ya que puede que desde que se publico la imagen se hayan producido actulizaciones de seguridad. También debemos crear un usuario que será el que ejecute las pruebas.
+
+El peso de este contenedor es de 420MB y tiene un total de 5 capas.
+
+
+### ALPINE
+
+El siguiente paso fue buscar que distribución de Linux era la que menos espacio ocupaba ya que los 420MB es algo grande para un contenedor. La busqueda nos dio como resultado que Alpine era una de las distribuciones más usadas en caso de querer contenedores ligeros. 
+
+```
+FROM alpine:latest
+LABEL maintainer="Jorge Prieto <e.jorgeprg@go.ugr.es>" version="0.1" description="Proyecto universitario"
+RUN apk update && apk upgrade \
+    && apk add --update python3 py3-pip\
+    && addgroup -S devs && adduser -S dev -G devs
+
+USER dev
+WORKDIR /app
+ENV PATH="${PATH}:/home/dev/.local/bin"
+RUN pip install doit pytest requests
+
+COPY --chown=dev:devs pytest.ini dodo.py . 
+
+CMD ["doit", "pruebas"]
+```
+
+Nos encontramos con un caso similar al de Ubuntu en cuanto a capas que se deben añadir ya que es necesario, más o menos, lo mismo.
+
+El peso de este contenedor es de 76MB y tambien de 5 capas. 
+
+
+### PYTHON
+
+En este caso ya tenemos un tamaño considerablemente bueno pero se quiso intentar reducirlo un poco más, en caso de ser posible. Por eso se probó con la imagen de Python. Se revisaron las últimas etiquetas de ese proyecto y se encontró: [python:3.9-alpine3.14](https://hub.docker.com/layers/python/library/python/3.9-alpine3.14/images/sha256-5cbd0b50f0c3a01ac017a70792a8f1f266d18351f8486eb2a067c2cbf85cc636?context=explore)
+
+Se eligió esta etiqueta frente a otras debido a que de esta manera sabríamos que versión de python está instalado y sobre qué version de Alpine. Y sobre la version latest, además de por las razones ya dichas, también porque el peso base es bastante alto (912MB). El resultado final se encuentra en el fichero [Dockerfile](https://github.com/soyjorgeprg/macime/blob/1fb6be67e1c89bc8fc5e48b461a1a4663f68c65e/Dockerfile) de la raíz del proyecto.
+
+
