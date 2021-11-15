@@ -2,6 +2,8 @@
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-green.svg)](https://opensource.org/licenses/) [![GitHub issues](https://img.shields.io/github/issues/soyjorgeprg/macime)](https://github.com/soyjorgeprg/macime/issues) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
+![GitHub](https://github.com/soyjorgeprg/macime/actions/workflows/main.yml/badge.svg) ![GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)
+
 ## Tabla de contenidos del proyecto
 
 * [Descripcion del problema](#descripcion-del-problema)
@@ -67,6 +69,7 @@ tests/tests.py::Pruebas::test_localizacion PASSED                        [100%]
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/primerosPasos.md)
 * [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/gestionTests.md)
+* [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
