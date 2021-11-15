@@ -1,11 +1,15 @@
+* [Explicacion del desarrollo del Dockerfile](#explicacion-del-desarrollo-del-dockerfile)
+  * [Ubuntu](#ubuntu)
+  * [Alpine](#alpine)
+  * [Python](#python)
+  * [Multicapa](#multicapa)
+* [Explicacion de la automatizacion de subida a los registros](#explicacion-de-la-automatizacion-de-subida-a-los-registros)
+  * [DockerHub](#dockerhub)
+  * [Registro alternativo](#registro-alternativo)
+
 ## Explicación del desarrollo del Dockerfile
 
 El desarrollo de las pruebas se ha automatizado mediante el uso de contenedores. De esta manera generaremos entornos controlados donde poder probar nuestro producto. El contenedor usado ha sido implementado mediante la prueba de diversas imagenes base e instrucciones.
-
-* [Ubuntu](#ubuntu)
-* [Alpine](#alpine)
-* [Python](#python)
-* [Multicapa](#multicapa)
 
 ### UBUNTU 
 
@@ -96,6 +100,25 @@ COPY --from=builder /app/requirements.txt .
 RUN pip install --no-cache /wheels/*
 ```
 
+## Explicacion de la automatizacion de subida a los registros
 
+Una vez creado el contenedor vamos a proceder a subirlo a diversos repositorios publicos de contenedores para poder tenerlos accesibles desde cualquier lugar y por cualquier otro desarrollador.
 
+### DockerHub
+
+El primer registro de contenedores al que se va a subir es [DockerHub](https://hub.docker.com/) debido a que es el principal registro de contenedores actualmente. Para hacer esto de manera automatica se ha desarrollado una _GitHub_ _Action_ que se encarga de subir la imagen cada vez que se modifica uno de los ficheros que afectan al contenedor (Dockerfile, requirements.txt, macime/*, tests/*).
+
+Sobre las versiones de cada uno de los trabajos internos me he decantado por aquellas que son más usadas dentro de GitHub o en caso de ver varios con un número de casos de uso simular por aquella versión más reciente.
+
+El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/main.yml)
+
+Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/readme.yml).
+
+### Registro alternativo
+
+Como registro alternativo se ha escogido GitHub Container Registry ya que estamos llevando todo el proyecto dentro del marco de GitHub. Para realizar esto se ha producido un automatismo similar al de DockerHub para subir la imagen cuando se modifiquen los mismos ficheros (Dockerfile, requirements.txt, macime/*, tests/*). 
+
+De igual manera las versiones están escogidas en base a número de usos o en su defecto más reciente.
+
+El fichero que realiza la acción es [gcr.yml](https://github.com/soyjorgeprg/macime/blob/1aa669bb2195b67ef19e7953979c5ce4632c3694/.github/workflows/gcr.yml).
 
