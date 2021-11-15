@@ -66,9 +66,9 @@ tests/tests.py::Pruebas::test_localizacion PASSED                        [100%]
 ### Documentacion Adicional
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
-* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/primerosPasos.md)
-* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/992a150c88b3a9545b57ce4a426bc8e7a4517b4b/docs/gestionTests.md)
-* [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/5329c030a2349cfebb1cebfbc6c1467df82b8155/docs/docker.md)
+* [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/main/docs/primerosPasos.md)
+* [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/main/docs/gestionTests.md)
+* [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/main/docs/docker.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
