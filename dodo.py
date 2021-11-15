@@ -1,5 +1,10 @@
 from doit.action import CmdAction
 
+DOIT_CONFIG = {
+        'backend': 'json',
+        'dep_file': 'doit-db.json',
+    }
+
 def task_pruebas():
     """Lanzamiento de los test unitarios del sistema"""
 
