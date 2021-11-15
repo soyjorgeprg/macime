@@ -1,9 +1,11 @@
-* [Marco de pruebas](#marco-de-pruebas)
-* [Eleccion final](#eleccion-final)
-
 ## Explicación del desarrollo del Dockerfile
 
 El desarrollo de las pruebas se ha automatizado mediante el uso de contenedores. De esta manera generaremos entornos controlados donde poder probar nuestro producto. El contenedor usado ha sido implementado mediante la prueba de diversas imagenes base e instrucciones.
+
+* [Ubuntu](#ubuntu)
+* [Alpine](#alpine)
+* [Python](#python)
+* [Multicapa](#multicapa)
 
 ### UBUNTU 
 
@@ -63,5 +65,37 @@ El peso de este contenedor es de 76MB y tambien de 5 capas.
 En este caso ya tenemos un tamaño considerablemente bueno pero se quiso intentar reducirlo un poco más, en caso de ser posible. Por eso se probó con la imagen de Python. Se revisaron las últimas etiquetas de ese proyecto y se encontró: [python:3.9-alpine3.14](https://hub.docker.com/layers/python/library/python/3.9-alpine3.14/images/sha256-5cbd0b50f0c3a01ac017a70792a8f1f266d18351f8486eb2a067c2cbf85cc636?context=explore)
 
 Se eligió esta etiqueta frente a otras debido a que de esta manera sabríamos que versión de python está instalado y sobre qué version de Alpine. Y sobre la version latest, además de por las razones ya dichas, también porque el peso base es bastante alto (912MB). El resultado final se encuentra en el fichero [Dockerfile](https://github.com/soyjorgeprg/macime/blob/1fb6be67e1c89bc8fc5e48b461a1a4663f68c65e/Dockerfile) de la raíz del proyecto.
+
+En este caso el contenedor pesa 60MB y un total de 8 capas. Aunque haya aumentado 3 capas, en total se ha visto reducido en un 22% el tamaño de la imagen.
+
+
+### MULTICAPA
+
+Se realizó una última prueba en la que se probó a ver si se podía reducir más el tamaño. Se estuvo investigando sobre la creacion de Dockerfile y se descubrieron los Dockerfile _multistage_. Consiste en crear primero una imagen de la que luego se extraerán aquellas 'partes' que sean importantes para la imagen final. No tiene porque ser una única imagen sino que se puede construir desde varias. En nuestro caso se ha construido desde la imagen de python:3.9-alpine3.14 y desde ahí se ha generado la imagen final.
+
+```
+FROM python:3.9-alpine3.14 as builder
+LABEL maintainer="Jorge Prieto <e.jorgeprg@go.ugr.es>" version="0.1" description="Proyecto universitario"
+
+WORKDIR /app
+
+COPY pytest.ini dodo.py /app 
+COPY requirements.txt .
+
+RUN pip wheel --no-cache-dir --no-deps --wheel-dir /app/wheels -r requirements.txt
+
+
+FROM python:3.9-alpine3.14
+
+WORKDIR /app
+
+COPY --from=builder /app/wheels /wheels
+COPY --from=builder /app /app
+COPY --from=builder /app/requirements.txt .
+
+RUN pip install --no-cache /wheels/*
+```
+
+
 
 
