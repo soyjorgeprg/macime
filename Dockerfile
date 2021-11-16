@@ -1,9 +1,9 @@
 FROM python:3.9-alpine3.14
 LABEL maintainer="Jorge Prieto <e.jorgeprg@go.ugr.es>" version="1.0.1" description="Proyecto universitario"
 
-RUN adduser -D dev \
-    && mkdir -p /app \
-    && chown dev -R /app/
+RUN addgroup --gid 3597 devs \
+    && adduser --uid 2120 -g devs -D dev
+
 USER dev
 
 ENV PATH="/home/dev/.local/bin:${PATH}"
