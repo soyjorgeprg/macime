@@ -2,7 +2,7 @@ from doit.action import CmdAction
 
 DOIT_CONFIG = {
         'backend': 'json',
-        'dep_file': '/app/test/doit-db.json',
+        'dep_file': '/tmp/doit-db.json',
     }
 
 def task_pruebas():
