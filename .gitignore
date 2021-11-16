@@ -132,3 +132,4 @@ dmypy.json
 macime/claves.json
 .doit.db
 .idea/
+doit-db.json
