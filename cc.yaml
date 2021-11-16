@@ -5,6 +5,6 @@ entidad:
 lenguaje:
   - python
 test:
-  - tests/tests.py
+  - test/tests.py
 fichero_tareas:
   - dodo.py
