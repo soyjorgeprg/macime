@@ -15,7 +15,7 @@ El desarrollo de las pruebas se ha automatizado mediante el uso de contenedores.
 
 ### UBUNTU 
 
-Comenzamos usando una imagen de Ubuntu como base ya que es una de las distribuciones de Linux más extendidas. 
+Comenzamos usando una imagen de Ubuntu como base ya que es la distribución de WSL que hemos estado usando durante el proyecto y como primer paso considero que es el idoneo.
 
 ```
 FROM ubuntu:latest
@@ -42,7 +42,7 @@ El peso de este contenedor es de 420MB y tiene un total de 5 capas.
 
 ### ALPINE
 
-El siguiente paso fue buscar que distribución de Linux era la que menos espacio ocupaba ya que los 420MB es algo grande para un contenedor. La busqueda nos dio como resultado que Alpine era una de las distribuciones más usadas en caso de querer contenedores ligeros. 
+El siguiente paso fue buscar que distribución de Linux era la que menos espacio ocupaba ya que los 420MB es algo grande para un contenedor ya que tardará mucho tiempo en descargarse. La busqueda nos dio como resultado que Alpine era una de las distribuciones más usadas en caso de querer contenedores ligeros. 
 
 ```
 FROM alpine:latest
