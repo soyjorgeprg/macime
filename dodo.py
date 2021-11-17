@@ -16,6 +16,17 @@ def task_pruebas():
             'verbosity': 2,
             }
 
+def task_lint():
+    """Comprobacion estatica del codigo (Lint)"""
+
+    def lint():
+        return "black . --check"
+
+    return {
+            'actions': [CmdAction(lint)],
+            'verbosity': 2,
+            }
+
 
 if __name__ == '__main__':
     import doit
