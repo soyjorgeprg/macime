@@ -1,0 +1,23 @@
+[build-system]
+requires = [
+    "pytest", 
+    "doit",
+    "requests",
+    "black",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-rfEs -vv"
+testpaths = [
+    "test",
+]
+python_files = [
+    "test*.py",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
