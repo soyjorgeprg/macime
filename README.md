@@ -43,16 +43,16 @@ Para la correcta ejecución de los test será necesario hacer uso del gestor de 
 
 ```
 
-[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/]
+PortatilJorge:  ~/proyecto
 git clone git@github.com:soyjorgeprg/macime.git && cd macime
 
-[07:20 PM]-[jorgeprg@PortatilJorge]-[.../proyecto/macime]
-docker run -it -v `pwd`:/app/test soyjorgeprg/macime:latest
+PortatilJorge:  ~/macime  |main ✓|
+→ docker run -t -v `pwd`:/app/test soyjorgeprg/macime:latest
 .  pruebas
 ============================= test session starts ==============================
 platform linux -- Python 3.9.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /usr/local/bin/python
 cachedir: .pytest_cache
-rootdir: /app/test, configfile: pytest.ini, testpaths: test
+rootdir: /app/test, configfile: pyproject.toml, testpaths: test
 collecting ... collected 4 items
 
 test/tests.py::Pruebas::test_cargas PASSED                               [ 25%]
@@ -60,7 +60,7 @@ test/tests.py::Pruebas::test_distancia PASSED                            [ 50%]
 test/tests.py::Pruebas::test_gestiongasolineras PASSED                   [ 75%]
 test/tests.py::Pruebas::test_localizacion PASSED                         [100%]
 
-============================== 4 passed in 0.36s ===============================
+============================== 4 passed in 0.30s ===============================
 
 ```
 
