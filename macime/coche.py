@@ -1,5 +1,4 @@
 class Coche:
-
     def __init__(self, consumo, deposito, actual):
         self.consumo = consumo
         self.deposito = deposito
@@ -12,4 +11,9 @@ class Coche:
         return self.deposito
 
     def __str__(self):
-        return "El coche tiene un consumo de " + self.consumo + " con un deposito de " + self.deposito 
+        return (
+            "El coche tiene un consumo de "
+            + self.consumo
+            + " con un deposito de "
+            + self.deposito
+        )
