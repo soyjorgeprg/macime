@@ -1,9 +1,5 @@
 image: alpine:3.14.3
 
-cache:
-  paths:
-    - .cache/pip
-
 before_script:
   - python -V
   - apk add --update docker openrc
