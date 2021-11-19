@@ -16,6 +16,6 @@ test_local:
 
 test_docker:
   script:
-    - docker run -v `pwd`:/app/test soyjorgeprg/macime:latest
+    - docker run -t -v `pwd`:/app/test soyjorgeprg/macime:latest
 
 
