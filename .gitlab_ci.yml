@@ -1,8 +1,5 @@
 image: alpine:3.14.3
 
-variable :
-  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-
 cache:
   paths:
     - .cache/pip

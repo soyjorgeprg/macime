@@ -1,0 +1,23 @@
+name: Ejecutar test en Docker
+
+on:
+  push:
+    paths:
+      - ".github/workflows/ci.yml"
+      - "macime/*"
+      - "test/*"
+      - "Dockerfile"
+
+jobs:
+  ejecutar_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hacer checkout del repositorio
+        uses: actions/checkout@v2
+
+      - name: Ejecutamos los tests
+        env: 
+          CONTENEDOR: ${{ github.repository }}
+        run: |
+          docker run -t -v `pwd`:/app/test ${CONTENEDOR,,}
