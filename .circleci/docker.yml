@@ -1,0 +1,20 @@
+version: 2.1
+executors:
+  my-custom-executor:
+    docker:
+      - image: soyjorgeprg/macime
+      
+jobs:
+  probar-test-dockerizados:
+
+    executor: my-custom-executor
+    steps:
+      - checkout
+      - run: |
+          pip install doit pytest requests
+          doit pruebas
+
+workflows:
+  my-custom-workflow:
+    jobs:
+      - probar-test-dockerizados
