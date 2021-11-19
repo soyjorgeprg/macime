@@ -1,5 +1,5 @@
 * GitLab
-  * Problemas: se ejecuta directamente en un docker (pensar mejor version etc), trabajar con 2 "repositorios", igual que GitHub Actions
+  * Problemas: se ejecuta directamente en un docker (pensar mejor version etc), trabajar con 2 "repositorios", igual que GitHub Actions, tiempo de sync, solo funciona sobre main
   * Aciertos: mucha documentacion, facil de configurar
 
 * Travis
