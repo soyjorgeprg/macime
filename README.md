@@ -2,7 +2,8 @@
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-green.svg)](https://opensource.org/licenses/) [![GitHub issues](https://img.shields.io/github/issues/soyjorgeprg/macime)](https://github.com/soyjorgeprg/macime/issues) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
-[![Publicar imagen en DockerHub](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml) [![Publicar imagen en GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml) [![Lint python](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml)
+[![Publicar imagen en DockerHub](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml) [![Publicar imagen en GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml) [![Lint python](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml) 
+[![Build Status](https://app.travis-ci.com/soyjorgeprg/macime.svg?branch=hito4)](https://app.travis-ci.com/soyjorgeprg/macime) [![Ejecutar test en Docker](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml) [![CircleCI](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4.svg?style=svg)](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4) [![GitLabCI](https://gitlab.com/soyjorgeprg/macime/badges/hito4/pipeline.svg)](https://gitlab.com/soyjorgeprg/macime/-/pipelines) 
 
 ## Tabla de contenidos del proyecto
 
@@ -64,12 +65,15 @@ test/tests.py::Pruebas::test_localizacion PASSED                         [100%]
 
 ```
 
+Hasta ahora podiamos gestionar los test de manera local mediante el uso directo del [task manager](https://github.com/soyjorgeprg/macime/blob/main/docs/gestionTests.md#gestor-de-tareas) impletado, doit, o mediante la [imagen Docker](https://hub.docker.com/repository/docker/soyjorgeprg/macime) que hemos creado como se ve en el ejemplo de arriba. Desde ahora también hemos implementado CI (Integracion Continua) y por lo tanto con cada commit que realicemos en este repositorio se lanzarán los test en 4 herramientas de integración continua. Más información acerca de esto en [docs/ci.md](https://github.com/soyjorgeprg/macime/blob/hito4/docs/ci.md)
+
 ### Documentacion Adicional
 
 En esta sección se mostrará aquella documentación adicional del proyecto que se vaya generando:
 * [Primeros pasos](https://github.com/soyjorgeprg/macime/blob/main/docs/primerosPasos.md)
 * [Documentacion pruebas](https://github.com/soyjorgeprg/macime/blob/main/docs/gestionTests.md)
 * [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/main/docs/docker.md)
+* [CI](https://github.com/soyjorgeprg/macime/blob/main/docs/ci.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
