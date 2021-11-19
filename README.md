@@ -2,7 +2,7 @@
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-green.svg)](https://opensource.org/licenses/) [![GitHub issues](https://img.shields.io/github/issues/soyjorgeprg/macime)](https://github.com/soyjorgeprg/macime/issues) [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
 
-![GitHub](https://github.com/soyjorgeprg/macime/actions/workflows/main.yml/badge.svg) ![GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)
+[![Publicar imagen en DockerHub](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml) [![Publicar imagen en GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml) [![Lint python](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml)
 
 ## Tabla de contenidos del proyecto
 

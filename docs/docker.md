@@ -112,9 +112,9 @@ El primer registro de contenedores al que se va a subir es [DockerHub](https://h
 
 Sobre las versiones de cada uno de los trabajos internos me he decantado por aquellas que son más usadas dentro de GitHub o en caso de ver varios con un número de casos de uso simular por aquella versión más reciente.
 
-El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/main.yml)
+El fichero que realiza esta accion es [main.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/docker.yml)
 
-Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/readme.yml).
+Para DockerHub también se ha creado otra _GitHub_ _Action_ que actualiza el README.md de DockerHub para mantener la consistencia, se encuentra en el fichero [readme.yml](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/lint.yml).
 
 ### Registro alternativo
 
