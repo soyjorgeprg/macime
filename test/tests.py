@@ -53,6 +53,11 @@ class Pruebas(unittest.TestCase):
         self.gasolineras.append(
             Gasolinera(self.localizacion[2], "BP", round(random.uniform(0.65, 0.89), 2))
         )
+        self.gasolineras.append(
+            Gasolinera(
+                self.localizacion[1], "SHELL", round(random.uniform(0.65, 0.89), 2)
+            )
+        )
 
     def test_cargas(self):
         """
@@ -73,8 +78,10 @@ class Pruebas(unittest.TestCase):
         """
         Checking if it calculates distance correctly
         """
-        x = self.localizacion[0].distanciaMinima(self.gasolineras)
-        self.assertEqual(x, 0)
+        distancias = self.localizacion[0].distanciasOrigen(self.gasolineras)
+        self.assertIsInstance(distancias, list)
+        self.assertIsInstance(distancias[0], list)
+        self.assertEqual(distancias[0][0], 0)
 
     def test_gestiongasolineras(self):
         """
@@ -89,6 +96,15 @@ class Pruebas(unittest.TestCase):
             self.assertIsInstance(eess, list)
             self.assertIsInstance(eess[0], type(g))
             self.assertIsInstance(eess[0].localizacion, type(self.localizacion[1]))
+
+    def test_mejorestacionservicio(self):
+        """
+        The best eess is selected by the function
+        """
+        dist = self.localizacion[0].distanciasOrigen(self.gasolineras)
+        es = self.localizacion[0].mejorEESS(dist)
+        self.assertIsInstance(es[1], type(self.gasolineras[0]))
+        self.assertEqual(es[0], 0.0)
 
     def tearDown(self):
         del self.gasolineras

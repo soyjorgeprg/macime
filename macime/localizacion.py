@@ -1,5 +1,6 @@
 import requests
 import json
+import operator
 
 from math import radians, cos, sin, asin, sqrt
 
@@ -42,13 +43,28 @@ class Localizacion:
 
         return c * r
 
-    def distanciaMinima(self, gasolineras):
+    def distanciasOrigen(self, gasolineras):
         distancias = []
         for es in gasolineras:
             destino = es.localizacion.coordenadas
             distancia = self.haversine(destino)
-            distancias.append(distancia)
+            distancias.append([distancia, es])
 
-        min_value = min(distancias)
-        min_index = distancias.index(min_value)
-        return min_index
+        distancias.sort(key=operator.itemgetter(0))
+        return distancias
+
+    def mejorEESS(self, distEESS):
+        maxDistancia = distEESS[0][0] + 10
+        finalistas = []
+        for eess in distEESS:
+            if eess[0] <= maxDistancia:
+                finalistas.append(eess)
+            else:
+                break
+        precios = []
+        for elegido in finalistas:
+            value = elegido[0] * elegido[1].precio
+            precios.append([value, elegido])
+
+        precios.sort(key=operator.itemgetter(0))
+        return precios[0][1]
