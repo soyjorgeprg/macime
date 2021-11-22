@@ -2,11 +2,11 @@ from doit.action import CmdAction
 
 DOIT_CONFIG = {
     "backend": "json",
-    "dep_file": "/tmp/doit-db.json",
+    "dep_file": "test/doit-db.json",
 }
 
 
-def task_pruebas():
+def task_tests():
     """Lanzamiento de los test unitarios del sistema"""
 
     def pruebas():
@@ -27,6 +27,26 @@ def task_lint():
     return {
         "actions": [CmdAction(lint)],
         "verbosity": 2,
+    }
+
+
+def task_dependencias():
+    """Instalacion de las dependencias correspondientes al proyecto"""
+
+    def install_poetry():
+        return "pip install poetry"
+
+    def config_poetry():
+        return "poetry config virtualenvs.create false"
+
+    def install_dependencies():
+        i = install_poetry() + " && "
+        c = config_poetry() + " && "
+        return i + c + "poetry install"
+
+    return {
+        "actions": [CmdAction(install_dependencies)],
+        "verbosity": 1,
     }
 
 

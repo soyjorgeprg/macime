@@ -1,10 +1,20 @@
 [build-system]
-requires = [
-    "pytest", 
-    "doit",
-    "requests",
-    "black",
-]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "macime"
+version = "1.4.0"
+description = "Proyecto universitario de la asignatura de Cloud Computing" 
+authors = ["Jorge Prieto <jorgeprg@correo.ugr.es>"]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytest = "^6.2"
+doit = "^0.33"
+requests = "^2.26"
+black = "^21.11b1"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
