@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**/*.py"
+      - ".github/workflows/lint.yml"
 
 jobs:
   lint:
@@ -19,10 +20,10 @@ jobs:
 
       - name: Instalar dependencias
         run: |
-          pip install doit pytest requests
+          pip install doit
     
       - name: Ejecutar linter
         run: |
-          doit lint
+          doit dependencias lint
 
 

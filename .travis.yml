@@ -5,7 +5,7 @@ python:
   - "3.8"
 
 install:
-  - pip install pytest doit requests 
+  - pip install doit 
 
 script:
-  - doit pruebas
+  - doit dependencias tests 

@@ -11,8 +11,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          pip install doit pytest requests
-          doit pruebas
+          pip install doit
+          doit dependencias tests
 
 workflows:
   my-custom-workflow:
