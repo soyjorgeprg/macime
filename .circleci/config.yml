@@ -2,7 +2,7 @@ version: 2.1
 executors:
   my-custom-executor:
     docker:
-      - image: soyjorgeprg/macime
+      - image: soyjorgeprg/macime:latest
       
 jobs:
   probar-test-dockerizados:
