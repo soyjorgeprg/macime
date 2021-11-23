@@ -6,7 +6,8 @@ on:
       - "macime/*"
       - "tests/*"
       - "Dockerfile"
-      - "requirements.txt"
+  tags:
+    - v*
 
 jobs:
   push_to_registry:
