@@ -6,6 +6,7 @@ on:
       - "macime/*"
       - "tests/*"
       - "Dockerfile"
+  create:
     tags:
       - v*
 
