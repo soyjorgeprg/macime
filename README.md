@@ -6,7 +6,7 @@
 
 [![Publicar imagen en DockerHub](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/docker.yml) [![Publicar imagen en GCR](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/gcr.yml) [![Lint python](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/lint.yml) 
 
-[![Build Status](https://app.travis-ci.com/soyjorgeprg/macime.svg?branch=hito4)](https://app.travis-ci.com/soyjorgeprg/macime) [![Ejecutar test en Docker](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml/badge.svg)](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml) [![CircleCI](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4.svg?style=shield)](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4) 
+[![Build Status](https://app.travis-ci.com/soyjorgeprg/macime.svg?branch=hito4)](https://app.travis-ci.com/soyjorgeprg/macime) [![Ejecutar test en Docker](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml/badge.svg?branch=v1.4.2)](https://github.com/soyjorgeprg/macime/actions/workflows/ci.yml) [![CircleCI](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4.svg?style=shield)](https://circleci.com/gh/soyjorgeprg/macime/tree/hito4) 
 
 ---
 
