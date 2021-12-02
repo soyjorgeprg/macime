@@ -7,7 +7,7 @@ from localizacion import Localizacion
 class Gasolinera:
     def __init__(self, localizacion, empresa="", precio=0, horario=""):
         self.empresa = empresa
-        self._precio = precio
+        self._precio = float(str(precio).replace(",", "."))
         self._localizacion = localizacion
         self.horario = horario
 

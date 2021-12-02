@@ -2,19 +2,27 @@ import requests
 import json
 import operator
 
+from geopy.geocoders import Nominatim
+from geopy.distance import geodesic
+
 from math import radians, cos, sin, asin, sqrt
 
 
 class Localizacion:
-    def __init__(self, direccion, cp, localidad, provincia, latitud, longitud):
+    def __init__(self, direccion, cp, localidad, provincia, latitud=0.0, longitud=0.0):
         self.direccion = direccion
         self.cp = cp
         self.localidad = localidad
         self.provincia = provincia
-        self._coordenadas = (
-            str(latitud).replace(",", "."),
-            str(longitud).replace(",", "."),
-        )
+        if latitud == 0.0 and longitud == 0.0:
+            geolocalizador = Nominatim(user_agent="macime")
+            location = geolocalizador.geocode(self.direccion + " " + self.cp + " " + self.localidad + " " + self.provincia)
+            self._coordenadas = (location.latitude, location.longitude)
+        else:
+            self._coordenadas = (
+                str(latitud).replace(",", "."),
+                str(longitud).replace(",", "."),
+            )
 
     @property
     def coordenadas(self):
@@ -47,7 +55,7 @@ class Localizacion:
         distancias = []
         for es in gasolineras:
             destino = es.localizacion.coordenadas
-            distancia = self.haversine(destino)
+            distancia = geodesic(self.coordenadas, destino).km 
             distancias.append([distancia, es])
 
         distancias.sort(key=operator.itemgetter(0))
