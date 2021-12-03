@@ -94,3 +94,11 @@ async def test_x_cercanas_api_fallo_num(test_client: TestClient):
     assert response.status == 400
     assert text == "Problema con el numero de gasolineras"
 
+@pytest.mark.asyncio
+async def test_no_uri(test_client: TestClient):
+    response = await test_client.get("/pruebas")
+    text = await response.text()
+
+    assert response is not None
+    assert response.status == 404
+    assert text == "No es posible encontrar el recurso especificado"

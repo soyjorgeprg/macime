@@ -49,9 +49,13 @@ def x_gasolineras_cercanas(tipo, lat, lon, x):
     if type(salida) == Response:
         return salida
     result = [gas[1].__str__() for gas in salida[0][:int(x)]]
-    return Response(200, content=Content(b"text/plain", bytes(result.__str__(), 'utf-8'))) 
+    return Response(200, content=Content(b"text/plain", bytes(result.__str__(), 'utf-8')))
+
+def no_uri():
+    return Response(404, content=Content(b"text/plain", b"No es posible encontrar el recurso especificado")) 
 
 app.router.add_get("/api/mejorES/:tipo/:lat/:lon", mejor_gasolinera)
 app.router.add_get("/api/cercanas/:tipo/:lat/:lon", gasolinera_cercana)
 app.router.add_get("/api/cercanas/:tipo/:lat/:lon/:x", x_gasolineras_cercanas)
+app.router.fallback = no_uri
 
