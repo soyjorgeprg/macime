@@ -1,8 +1,7 @@
-import requests
 import json
 
+import utils
 from localizacion import Localizacion
-
 
 class Gasolinera:
     def __init__(self, localizacion, empresa="", precio=0, horario=""):
@@ -10,6 +9,8 @@ class Gasolinera:
         self._precio = float(str(precio).replace(",", "."))
         self._localizacion = localizacion
         self.horario = horario
+        
+        self.logger = utils.log("macime")
 
     @property
     def precio(self):
@@ -29,31 +30,15 @@ class Gasolinera:
             + str(self._localizacion)
         )
 
-    def obtenerGasolineras(self, code):
-        url = (
-            "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/FiltroProducto/"
-            + code
-        )
-        respuesta = requests.get(url).json()
-
-        path = ""
-        if code == "17":
-            path = "macime/data/glp.json"
-        elif code == "18":
-            path = "macime/data/gnc.json"
-        else:
-            path = "macime/data/eess.json"
-
-        with open(path, "w") as eess:
-            json.dump(respuesta, eess)
-
-        return 0
-
     def leerGasolineras(self, tipo):
         fichero = "macime/data/" + tipo.lower() + ".json"
 
-        with open(fichero, "r") as f:
-            respuesta = json.load(f)
+        try:
+            with open(fichero, "r") as f:
+                respuesta = json.load(f)     
+            self.logger.info('Read from %s', fichero)
+        except:
+            self.logger.error('Reading from %s', fichero)
 
         gasolineras = []
         for x in respuesta["ListaEESSPrecio"]:
@@ -68,5 +53,6 @@ class Gasolinera:
             gasolineras.append(
                 Gasolinera(localizacion, x["Rótulo"], x["PrecioProducto"], x["Horario"])
             )
+        self.logger.info('Created list of gasolineras %s', str(id(gasolineras)))
 
         return gasolineras
