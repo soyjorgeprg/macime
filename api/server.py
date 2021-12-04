@@ -1,4 +1,5 @@
 import sys
+import configparser
 
 from blacksheep.server import Application
 from blacksheep.contents import Content
@@ -11,18 +12,27 @@ from gasolinera import Gasolinera
 
 app = Application()
 
+def prep():
+    config = configparser.ConfigParser()
+    config.read('pyproject.toml')
+    return config 
+
 def correccion_gestion(tipo, lat, lon, x=1):
+    config = prep()
     try:
         x = int(x)
     except:
-        return Response(400, content=Content(b"text/plain", b"Problema con el numero de gasolineras"))
+        result = config['config.errores']['e_num']
+        return Response(400, content=Content(b"text/plain", bytes(result, 'utf-8')))
     try:
         lat = float(lat)
         lon = float(lon)
     except:
-        return Response(400, content=Content(b"text/plain", b"Problema con las coordenadas"))
+        result = config['config.errores']['e_coord']
+        return Response(400, content=Content(b"text/plain", bytes(result, 'utf-8')))
     if tipo not in str(["GLP", "GNC", "glp", "gnc"]):
-        return Response(400, content=Content(b"text/plain", b"Problema con el tipo de combustible"))
+        result = config['config.errores']['e_tipo']
+        return Response(400, content=Content(b"text/plain", bytes(result, 'utf-8')))
     localizacion = Localizacion("", 0, "", "", lat, lon)
     g = Gasolinera(localizacion)
     eess = g.leerGasolineras(tipo)
@@ -52,7 +62,9 @@ def x_gasolineras_cercanas(tipo, lat, lon, x):
     return Response(200, content=Content(b"text/plain", bytes(result.__str__(), 'utf-8')))
 
 def no_uri():
-    return Response(404, content=Content(b"text/plain", b"No es posible encontrar el recurso especificado")) 
+    config = prep()
+    result = config['config.errores']['e_defecto']
+    return Response(404, content=Content(b"text/plain", bytes(result, 'utf-8'))) 
 
 app.router.add_get("/api/mejorES/:tipo/:lat/:lon", mejor_gasolinera)
 app.router.add_get("/api/cercanas/:tipo/:lat/:lon", gasolinera_cercana)

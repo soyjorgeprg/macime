@@ -8,7 +8,6 @@ version = "1.4.0"
 description = "Proyecto universitario de la asignatura de Cloud Computing" 
 authors = ["Jorge Prieto <jorgeprg@correo.ugr.es>"]
 
-
 [tool.poetry.dependencies]
 python = "^3.8"
 pytest = "^6.2"
@@ -22,15 +21,23 @@ geopy = "^2.2.0"
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-rfEs -vv"
-testpaths = [
-    "test",
-]
-python_files = [
-    "test*.py",
-]
+testpaths = ["test"]
+python_files = ["test*.py"]
 
 [tool.black]
 line-length = 88
 target-version = ['py38']
 include = '\.pyi?$'
+
+[config.errores]
+a_una = 'La gasolinera CEPSA con precio 0.879 localizada en CAMINO DE RONDA, 117 18003 GRANADA GRANADA'
+a_multi = ['La gasolinera CEPSA con precio 0.879 localizada en CAMINO DE RONDA, 117 18003 GRANADA GRANADA', 'La gasolinera REPSOL con precio 0.869 localizada en AVENIDA LAS ALPUJARRAS, S/N 18012 GRANADA GRANADA', 'La gasolinera REPSOL con precio 0.869 localizada en CARRETERA ANTIGUA DE MALAGA A GRANADA KM. 142 18003 GRANADA GRANADA', 'La gasolinera REPSOL con precio 0.869 localizada en CALLE CL DE LA SULTANA , 9, 9 18006 GRANADA GRANADA', 'La gasolinera ES.LA NARANJA con precio 0.867 localizada en CALLE PAGO DEL LUNES, 1 18195 CULLAR VEGA GRANADA']
+e_coord = 'Problema con las coordenadas'
+e_tipo = 'Problema con el tipo de combustible'
+e_num = 'Problema con el numero de gasolineras'
+e_defecto = 'No es posible encontrar el recurso especificado'
+
+[config.api]
+port = 8080
+api-path = '/api/'
 
