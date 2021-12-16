@@ -20,7 +20,7 @@ jobs:
 
       - name: Instalar dependencias
         run: |
-          pip install doit
+          pip install doit==0.33.1
     
       - name: Ejecutar linter
         run: |
