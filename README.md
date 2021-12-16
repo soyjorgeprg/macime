@@ -37,6 +37,10 @@ Implementamos un entorno neutro para las pruebas mediante la creación de un con
 
 Automatizamos las pruebas para que se ejecuten cada vez que realicemos un push sobre nuestro proyecto para así asegurarnos de su corrección, más información [aquí](https://github.com/soyjorgeprg/macime/blob/main/docs/ci.md). Además se ha añadido una [GitHub Action](https://github.com/soyjorgeprg/macime/blob/main/.github/workflows/lint.yml) para realizar un análisis estático del código y seguir las buenas prácticas actuales.
 
+### Microservicios
+
+Añadimos nuevos servicios a nuestro aplicativo para tener un control sobre lo que ocurre (logging), acceder de manera externa a las funciones (API) y gestionar la configuración en todas las posibles instancias (config). Para saber más acerca de estas configuraciones dirijase a la [documentación](https://github.com/soyjorgeprg/macime/blob/main/docs/microservicios.md)
+
 ---
 
 #### Documentación hitos asignatura 
@@ -48,6 +52,7 @@ En esta sección se mostrará aquella documentación del proyecto referente a ca
 * HITO 2: [Explicación elecciones](https://github.com/soyjorgeprg/macime/blob/main/docs/gestionTests.md) y [ejecución de los tests](https://github.com/soyjorgeprg/macime/blob/main/docs/tests.md)
 * HITO 3: [Despliegue de pruebas en contenedores](https://github.com/soyjorgeprg/macime/blob/main/docs/docker.md)
 * HITO 4: [Explicación CI](https://github.com/soyjorgeprg/macime/blob/main/docs/ci.md)
+* HITO 5: [Microservicios](https://github.com/soyjorgeprg/macime/blob/main/docs/microservicios.md)
 
 
 [//]: https://geoportalgasolineras.es/#/Descargas
