@@ -39,7 +39,7 @@ Automatizamos las pruebas para que se ejecuten cada vez que realicemos un push s
 
 ### Microservicios
 
-Añadimos nuevos servicios a nuestro aplicativo para tener un control sobre lo que ocurre (logging), acceder de manera externa a las funciones (API) y gestionar la configuración en todas las posibles instancias (config). Para saber más acerca de estas configuraciones dirijase a la [documentación](https://github.com/soyjorgeprg/macime/blob/main/docs/microservicios.md)
+Añadimos nuevos servicios a nuestro aplicativo para tener un control sobre lo que ocurre (logging), acceder de manera externa a las funciones (API) y gestionar la configuración en todas las posibles instancias (config). Para saber más acerca de estas configuraciones dirijase a la [documentación](https://github.com/soyjorgeprg/macime/blob/main/docs/microservicios.md).
 
 ---
 
