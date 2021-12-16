@@ -8,4 +8,4 @@ install:
   - pip install doit 
 
 script:
-  - doit dependencias tests 
+  - doit dependencias test 

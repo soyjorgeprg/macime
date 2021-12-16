@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run: |
           pip install doit
-          doit dependencias tests
+          doit dependencias test
 
 workflows:
   my-custom-workflow:

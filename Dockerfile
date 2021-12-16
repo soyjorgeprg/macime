@@ -12,4 +12,4 @@ WORKDIR /app/test
 
 RUN pip install doit
 
-CMD ["doit", "dependencias", "tests"] 
+CMD ["doit", "dependencias", "test"] 
