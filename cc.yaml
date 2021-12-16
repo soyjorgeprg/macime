@@ -8,3 +8,5 @@ test:
   - test/tests.py
 fichero_tareas:
   - dodo.py
+make:
+  - doit dependencias
