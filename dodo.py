@@ -5,6 +5,7 @@ DOIT_CONFIG = {
     "dep_file": "/tmp/doit-db.json",
 }
 
+
 def task_build():
     """Generacion de ficheros en caso de que sea necesario"""
 
@@ -16,6 +17,7 @@ def task_build():
         "verbosity": 2,
     }
 
+
 def task_install():
     """Preparación del entorno de ejecución"""
 
@@ -26,6 +28,7 @@ def task_install():
         "actions": [CmdAction(mensaje)],
         "verbosity": 2,
     }
+
 
 def task_test():
     """Lanzamiento de los test unitarios del sistema"""

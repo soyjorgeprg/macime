@@ -18,7 +18,15 @@ class Localizacion:
         self.provincia = provincia
         if latitud == 0.0 and longitud == 0.0:
             geolocalizador = Nominatim(user_agent="macime")
-            location = geolocalizador.geocode(self.direccion + " " + self.cp + " " + self.localidad + " " + self.provincia)
+            location = geolocalizador.geocode(
+                self.direccion
+                + " "
+                + self.cp
+                + " "
+                + self.localidad
+                + " "
+                + self.provincia
+            )
             self._coordenadas = (location.latitude, location.longitude)
         else:
             self._coordenadas = (
@@ -58,10 +66,12 @@ class Localizacion:
         distancias = []
         for es in gasolineras:
             destino = es.localizacion.coordenadas
-            distancia = geodesic(self.coordenadas, destino).km 
+            distancia = geodesic(self.coordenadas, destino).km
             distancias.append([distancia, es])
 
-        self.logger.info('Calculated all the distances in distancias (%s)', str(id(distancias)))
+        self.logger.info(
+            "Calculated all the distances in distancias (%s)", str(id(distancias))
+        )
         distancias.sort(key=operator.itemgetter(0))
         return distancias
 
@@ -73,13 +83,15 @@ class Localizacion:
                 finalistas.append(eess)
             else:
                 break
-        self.logger.info('Calculated gas stations that are nearer than 10km in finalistas (%s)', str(id(finalistas)))
+        self.logger.info(
+            "Calculated gas stations that are nearer than 10km in finalistas (%s)",
+            str(id(finalistas)),
+        )
         precios = []
         for elegido in finalistas:
             value = elegido[0] * elegido[1].precio
             precios.append([value, elegido])
 
-        self.logger.info('Calculated the best gas station')
+        self.logger.info("Calculated the best gas station")
         precios.sort(key=operator.itemgetter(0))
         return precios[0][1]
-

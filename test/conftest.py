@@ -8,6 +8,7 @@ sys.path.insert(2, "api")
 
 from server import app as app_server
 
+
 @pytest.fixture(scope="session")
 def event_loop(request):
     loop = asyncio.get_event_loop_policy().new_event_loop()
@@ -25,4 +26,3 @@ async def api():
 @pytest.fixture(scope="session")
 async def test_client(api):
     return TestClient(api)
-
